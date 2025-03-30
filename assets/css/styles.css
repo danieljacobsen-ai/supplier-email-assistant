@@ -1,0 +1,562 @@
+/* Circuto - Supplier Email Assistant Styles */
+
+:root {
+  --background: #f8f9fa;
+  --text: #212529;
+  --text-light: #6c757d;
+  --primary: #007BFF;
+  --primary-dark: #0056b3;
+  --card-bg: #ffffff;
+  --alert-color: #dc3545;
+  --alert-bg: #fff5f5;
+  --insight-color: #6610f2;
+  --insight-bg: #f5f0ff;
+  --success-color: #28a745;
+  --success-bg: #f0fff4;
+  --warning-color: #ffc107;
+  --warning-bg: #fffbf0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* Two-column layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.mockup-benefits-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.mockup-container {
+  flex: 3; /* Increased from 1 to 3 to make it larger */
+  min-width: 500px; /* Increased from 300px */
+  text-align: center;
+  border-radius: 8px;
+  pointer-events: none; /* Prevent interaction to make it clear it's just an image */
+}
+
+/* Benefits Section */
+.benefits {
+  flex: 1; /* Kept at 1 while mockup is at 3 */
+  min-width: 250px; /* Decreased from 300px */
+  max-width: 350px; /* Added max-width to keep it compact */
+  background-color: var(--card-bg);
+  padding: 1.5rem; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.benefits ul {
+  padding-left: 0;
+  list-style-type: none;
+  margin: 0;
+  text-align: left;
+}
+
+.benefits li {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.benefits li .icon {
+  background-color: var(--primary);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.benefits li .text {
+  flex: 1;
+}
+
+.benefits li .text h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.benefits li .text p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.trust-signal {
+  margin-top: 2rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* Mailchimp Form Styling */
+#mc_embed_signup {
+  background: #fff; 
+  clear: left; 
+  font: 14px Helvetica, Arial, sans-serif; 
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* App Interface Styles */
+.mockup-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 8px;
+  pointer-events: none; /* Prevent interaction to make it clear it's just an image */
+}
+
+.mockup-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.app-interface {
+  max-width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: var(--background);
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+}
+
+.app-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.app-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.app-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Simplified Sidebar */
+.sidebar {
+  width: 150px;
+  background-color: #f1f3f5;
+  padding: 1rem 0;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-item {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.sidebar-item:hover {
+  background-color: #e9ecef;
+}
+
+.sidebar-item.active {
+  background-color: #e9ecef;
+  border-left: 3px solid var(--primary);
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.sidebar-item .count,
+.sidebar-item .alert-count,
+.sidebar-item .insight-count {
+  margin-left: auto;
+  font-size: 0.8rem;
+  background-color: #dee2e6;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.1rem 0.5rem;
+  min-width: 16px;
+  text-align: center;
+}
+
+.sidebar-item .alert-count {
+  background-color: var(--alert-color);
+  color: white;
+}
+
+.sidebar-item .insight-count {
+  background-color: var(--insight-color);
+  color: white;
+}
+
+/* Email List */
+.email-list {
+  width: 300px;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.email-item {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.email-item:hover {
+  background-color: #e9ecef;
+}
+
+.email-item.unread {
+  background-color: #f0f7ff;
+}
+
+.email-item.selected {
+  background-color: #e9ecef;
+  border-left: 3px solid var(--primary);
+}
+
+.email-item.alert {
+  border-left: 3px solid var(--alert-color);
+}
+
+.email-item.insight {
+  border-left: 3px solid var(--insight-color);
+}
+
+.supplier-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.supplier-name {
+  font-weight: bold;
+}
+
+.email-time {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+.email-subject {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.email-summary {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.alert-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--alert-bg);
+  color: var(--alert-color);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.insight-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--insight-bg);
+  color: var(--insight-color);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--success-bg);
+  color: var(--success-color);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.alert-badge i, .insight-badge i, .status-badge i {
+  margin-right: 0.25rem;
+}
+
+/* Email Detail */
+.email-detail {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.email-detail-header {
+  margin-bottom: 1rem;
+}
+
+.email-meta {
+  margin-bottom: 1rem;
+}
+
+.email-meta h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.email-meta div {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* AI Insights Box */
+.ai-insights-box {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.ai-insights-box:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.insights-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.insights-content {
+  padding: 1rem;
+}
+
+.insight-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.insight-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.insight-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-item.critical .insight-icon {
+  background-color: var(--alert-bg);
+  color: var(--alert-color);
+}
+
+.insight-item.impact .insight-icon {
+  background-color: var(--insight-bg);
+  color: var(--insight-color);
+}
+
+.insight-item.action .insight-icon {
+  background-color: var(--warning-bg);
+  color: var(--warning-color);
+}
+
+.insight-text {
+  flex: 1;
+}
+
+.insight-text h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.insight-text p {
+  margin: 0 0 0.75rem 0;
+  color: var(--text);
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.action-buttons button {
+  padding: 0.6rem 1rem;
+  background-color: #f1f3f5;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.action-buttons button:hover {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.email-detail-body {
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  #mc_embed_signup {
+    width: 100%;
+  }
+  
+  .benefits {
+    padding: 1.5rem;
+  }
+  
+  .app-interface {
+    height: auto;
+    flex-direction: column;
+  }
+  
+  .app-content {
+    flex-direction: column;
+  }
+  
+  .sidebar, .email-list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}

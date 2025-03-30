@@ -4,7 +4,7 @@ This is a simple landing page for Circuto, an AI email assistant tailored for bu
 
 ## Implementation Details
 
-- Built with Jekyll for GitHub Pages hosting
+- Built with HTML/CSS for GitHub Pages hosting
 - Simple, clean design focused on the value proposition
 - Mailchimp integration for collecting early access signups
 - Mobile-responsive layout
@@ -13,11 +13,9 @@ This is a simple landing page for Circuto, an AI email assistant tailored for bu
 
 To run this site locally:
 
-1. Make sure you have Jekyll installed: `gem install jekyll bundler`
-2. Clone this repository
-3. Run `bundle install`
-4. Start the local server: `bundle exec jekyll serve`
-5. Visit `http://localhost:4000` in your browser
+1. Clone this repository
+2. Visit `http://localhost:4000` in your browser
+NOTE: THIS LIST MAY BE INCOMPLETE!
 
 ## Deployment
 
@@ -72,6 +70,8 @@ Validate demand for an AI-powered email assistant that helps supply chain manage
 
 Each one is structured the same way but tests a different value proposition.
 
+Note that ONLY the top heading and the subheading vary - so we should not copy the rest to all variants, rather we should share the shared content between variants.
+
 ### 🅰️ Variant A – **“Avoid Delays” Angle**
 
 - **Headline:** Never Miss a Supplier Delay Again
@@ -93,12 +93,17 @@ Each one is structured the same way but tests a different value proposition.
 **Shared Elements:**
 
 - Screenshot or wireframe of inbox summary (from section 1).
-- 3 key benefit bullets (can rotate per test):
+- key benefit bullets (can rotate per test):
+  - "Works instantly with your existing Gmail inbox"
   - "Summarizes supplier updates automatically"
   - "Flags delays and unanswered emails"
-  - "Works with your existing Gmail inbox"
+  - "Time savings through automated email detection"
+  - "Never miss an item again with intelligent categorization"
+  - "Clear highlighting of critical information"
+
 - Trust signal: “Built for supply chain managers by supply chain pros.”
 - Optional: short 2-question form below CTA (e.g. industry, # of supplier emails/day)
+
 
 ---
 
@@ -129,7 +134,7 @@ Each one is structured the same way but tests a different value proposition.
 
 ## ✅ WHAT TO BUILD FIRST
 
-- A simple Jekyll site with 3 landing page variants (rotate with A/B testing).
+- A simple HTML site with 3 landing page variants (rotate with A/B testing).
 - Link mockup screenshot or image of the summary UI.
 - Connect Mailchimp for email capture.
 - Run $50–100 of ads to each variant (~100–200 visits total).

@@ -1,77 +1,358 @@
----
-layout: default
-title: Turn Supplier Emails Into Instant Insights | Circuto
----
-
-<script src="/assets/js/ab-testing.js"></script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turn Supplier Emails Into Instant Insights | Circuto</title>
+  <script src="../assets/js/ab-testing.js"></script>
+  <script src="../assets/js/include-components.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<!-- Top announcement bar -->
+<div class="w-full bg-[#007BFF] text-white text-center py-2 font-medium">
+  Circuto is launching soon
+</div>
 <div class="container">
   <div class="hero">
     <h1>Turn Supplier Emails Into Instant Insights</h1>
     <p>No more digging through threads to get answers. Get summaries and alerts in one view.</p>
-    <!-- Start Mailchimp Code -->
-    <div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-      <style type="text/css">
-            #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
-            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      </style>
-      <div id="mc_embed_signup">
-          <form action="https://danieljacobsen.us10.list-manage.com/subscribe/post?u=8f9e7234975c25fb2a5f951bd&amp;id=e1da942ad7&amp;f_id=00a847e4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-              <div id="mc_embed_signup_scroll"><h2>Request Early Access</h2>
-                  <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div>
-              <div id="mce-responses" class="clear foot">
-                  <div class="response" id="mce-error-response" style="display: none;"></div>
-                  <div class="response" id="mce-success-response" style="display: none;"></div>
-              </div>
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-              <input type="text" name="b_8f9e7234975c25fb2a5f951bd_e1da942ad7" tabindex="-1" value="">
-          </div>
-              <div class="optionalParent">
-                  <div class="clear foot">
-                      <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                      
-                  </div>
-              </div>
-          </div>
-      </form>
-      </div>
-      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-    </div>
-    <!--End mc_embed_signup-->
+    <!-- Include the shared email signup component -->
+    <div data-include="../assets/components/email-signup.html"></div>
   </div>
 
-  <div class="mockup-container">
-    <img src="/assets/images/supplier-inbox-mockup.svg" alt="Circuto AI Email Assistant Interface" width="800">
-  </div>
-
-  <div class="benefits">
-    <h2>How Circuto Helps You</h2>
-    <ul>
-      <li>✅ <strong>Summarizes supplier updates automatically</strong> - Get the key points without reading long messages</li>
-      <li>⚠️ <strong>Flags delays and unanswered emails</strong> - Never miss critical information</li>
-      <li>⏱️ <strong>Works with your existing Gmail inbox</strong> - No new tools to learn</li>
-    </ul>
-    <p class="trust-signal">Built for supply chain managers by supply chain pros.</p>
-  </div>
+  <!-- Simple table layout for mockup and benefits side by side -->
+  <table style="width: 100%; border-collapse: separate; border-spacing: 20px;">
+    <tr>
+      <td style="width: 65%; vertical-align: top; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <!-- Include the shared app interface component -->
+        <div data-include="../assets/components/app-interface.html"></div>
+      </td>
+      <td style="width: 35%; vertical-align: top;">
+        <!-- Include the shared benefits component -->
+        <div class="bg-white rounded-lg shadow-md" data-include="../assets/components/benefits.html"></div>
+      </td>
+    </tr>
+  </table>
 
   <p style="text-align: center; margin-top: 30px; font-style: italic;">Have questions? Contact us at hello@circuto.com</p>
 </div>
 
 <style>
+  :root {
+    --background: #f8f9fa;
+    --text: #212529;
+    --text-light: #6c757d;
+    --primary: #007BFF;
+    --primary-dark: #0056b3;
+    --card-bg: #ffffff;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
   .mockup-container {
     margin: 3rem 0;
     text-align: center;
     background-color: var(--background);
   }
   
-  .mockup-container img {
-    max-width: 100%;
-    height: auto;
+  /* App Interface Styles */
+  .app-interface {
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
     border-radius: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  .app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  .app-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .app-search {
+    display: flex;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 2rem;
+  }
+  
+  .app-search input {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .app-search button {
+    padding: 0.5rem 1rem;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .app-user {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #0056b3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .app-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #f1f3f5;
+    padding: 1rem 0;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar-item {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .sidebar-item.active {
+    background-color: #e9ecef;
+    border-left: 3px solid #007BFF;
+    font-weight: bold;
+  }
+  
+  .email-list {
+    width: 350px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+  }
+  
+  .email-item {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .email-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .email-item.unread {
+    background-color: #f0f7ff;
+  }
+  
+  .email-item.alert {
+    border-left: 3px solid #dc3545;
+  }
+  
+  .email-item.pending {
+    border-left: 3px solid #ffc107;
+  }
+  
+  .supplier-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .supplier-name {
+    font-weight: bold;
+  }
+  
+  .email-time {
+    color: #6c757d;
+    font-size: 0.85rem;
+  }
+  
+  .email-subject {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .email-summary {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .alert-badge {
+    display: inline-block;
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .info-badge {
+    display: inline-block;
+    color: #0d6efd;
+    font-weight: bold;
+  }
+  
+  .pending-badge {
+    display: inline-block;
+    color: #ffc107;
+    font-weight: bold;
+  }
+  
+  .email-actions {
+    text-align: right;
+  }
+  
+  .view-btn {
+    padding: 0.25rem 0.75rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  
+  .email-detail {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  
+  .email-detail-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .email-detail-header h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .email-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .email-detail-body {
+    line-height: 1.6;
+  }
+  
+  .ai-summary-box {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-left: 4px solid #007BFF;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .ai-summary-box h4 {
+    margin-top: 0;
+    color: #007BFF;
+    margin-bottom: 1rem;
+  }
+  
+  .ai-summary-box ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .suggested-actions {
+    margin-top: 1rem;
+  }
+  
+  .suggested-actions h5 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .suggested-actions button {
+    padding: 0.25rem 0.75rem;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  
+  .suggested-actions button:hover {
+    background-color: #dee2e6;
   }
   
   .benefits {
@@ -102,3 +383,5 @@ title: Turn Supplier Emails Into Instant Insights | Circuto
     color: var(--text-light);
   }
 </style>
+</body>
+</html>

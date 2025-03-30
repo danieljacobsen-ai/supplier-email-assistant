@@ -145,6 +145,33 @@ h2 {
   background-color: var(--primary-dark);
 }
 
+/* FAQ Section */
+.faq {
+  margin: 3rem auto;
+  max-width: 700px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 2rem 2rem;
+}
+
+.faq-item {
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.faq-item p {
+  margin-top: 0.5rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
 footer {
   margin-top: 4rem;
   padding: 2rem 0;
@@ -159,7 +186,7 @@ footer {
     font-size: 2rem;
   }
   
-  .benefits {
+  .benefits, .faq {
     padding: 1.5rem;
   }
   
@@ -171,5 +198,13 @@ footer {
   .email-form input[type="email"] {
     width: 100%;
     box-sizing: border-box;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .faq-item p {
+    font-size: 1rem;
   }
 }

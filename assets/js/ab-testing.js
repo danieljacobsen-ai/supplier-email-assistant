@@ -1,13 +1,24 @@
 // A/B Testing Analytics Script
 
-// Function to get the current variant from URL or cookie
+// Function to get the current variant from URL, cookie, or current page
 function getCurrentVariant() {
   // Check URL parameter first
   const urlParams = new URLSearchParams(window.location.search);
   const variantParam = urlParams.get('variant');
   
   if (variantParam && ['a', 'b', 'c'].includes(variantParam)) {
+    // Set cookie for future visits
+    document.cookie = `variant=${variantParam};path=/;max-age=2592000`; // 30 days
     return variantParam;
+  }
+  
+  // Check if we're already on a variant page
+  const currentPath = window.location.pathname;
+  if (currentPath.includes('variant-')) {
+    const variantMatch = currentPath.match(/variant-(\w)\.html/);
+    if (variantMatch && ['a', 'b', 'c'].includes(variantMatch[1])) {
+      return variantMatch[1];
+    }
   }
   
   // Check cookie next
@@ -22,8 +33,11 @@ function getCurrentVariant() {
     }
   }
   
-  // Default to variant A if no variant is found
-  return 'a';
+  // If no variant is found, assign randomly
+  const variants = ['a', 'b', 'c'];
+  const randomVariant = variants[Math.floor(Math.random() * variants.length)];
+  document.cookie = `variant=${randomVariant};path=/;max-age=2592000`; // 30 days
+  return randomVariant;
 }
 
 // Track page view for the current variant
@@ -59,16 +73,31 @@ function trackFormSubmission() {
   }
 }
 
+// Redirect to the appropriate variant if on index page
+function redirectToVariant() {
+  const currentPath = window.location.pathname;
+  // Only redirect if we're on the index page and not already on a variant
+  if ((currentPath === '/' || currentPath.endsWith('index.html')) && !window.location.search.includes('variant=')) {
+    const variant = getCurrentVariant();
+    window.location.href = `variants/variant-${variant}.html`;
+    return true;
+  }
+  return false;
+}
+
 // Initialize tracking
 document.addEventListener('DOMContentLoaded', function() {
-  // Track page view
-  trackPageView();
-  
-  // Add event listeners to track form submissions
-  const forms = document.querySelectorAll('form');
-  forms.forEach(form => {
-    form.addEventListener('submit', function() {
-      trackFormSubmission();
+  // Check if we need to redirect first
+  if (!redirectToVariant()) {
+    // If no redirect, track the page view
+    trackPageView();
+    
+    // Add event listeners to track form submissions
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function() {
+        trackFormSubmission();
+      });
     });
-  });
+  }
 });

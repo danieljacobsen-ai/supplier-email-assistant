@@ -1,43 +1,28 @@
 // A/B Testing Analytics Script
 
-// Function to get the current variant from URL, cookie, or current page
+// Function to get the current variant from URL or current page, or assign randomly
 function getCurrentVariant() {
-  // Check URL parameter first
+  // Check URL parameter first (highest priority)
   const urlParams = new URLSearchParams(window.location.search);
   const variantParam = urlParams.get('variant');
   
-  if (variantParam && ['a', 'b', 'c'].includes(variantParam)) {
-    // Set cookie for future visits
-    document.cookie = `variant=${variantParam};path=/;max-age=2592000`; // 30 days
-    return variantParam;
+  if (variantParam && ['a', 'b', 'c'].includes(variantParam.toLowerCase())) {
+    return variantParam.toLowerCase();
   }
   
   // Check if we're already on a variant page
   const currentPath = window.location.pathname;
   if (currentPath.includes('variant-')) {
     const variantMatch = currentPath.match(/variant-(\w)\.html/);
-    if (variantMatch && ['a', 'b', 'c'].includes(variantMatch[1])) {
-      return variantMatch[1];
+    if (variantMatch && ['a', 'b', 'c'].includes(variantMatch[1].toLowerCase())) {
+      return variantMatch[1].toLowerCase();
     }
   }
   
-  // Check cookie next
-  const cookies = document.cookie.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.startsWith('variant=')) {
-      const cookieVariant = cookie.substring(8);
-      if (['a', 'b', 'c'].includes(cookieVariant)) {
-        return cookieVariant;
-      }
-    }
-  }
-  
-  // If no variant is found, assign randomly
+  // For testing purposes - force random assignment on each page load
+  // This ensures you see different variants when refreshing
   const variants = ['a', 'b', 'c'];
-  const randomVariant = variants[Math.floor(Math.random() * variants.length)];
-  document.cookie = `variant=${randomVariant};path=/;max-age=2592000`; // 30 days
-  return randomVariant;
+  return variants[Math.floor(Math.random() * variants.length)];
 }
 
 // Track page view for the current variant
@@ -76,10 +61,29 @@ function trackFormSubmission() {
 // Redirect to the appropriate variant if on index page
 function redirectToVariant() {
   const currentPath = window.location.pathname;
-  // Only redirect if we're on the index page and not already on a variant
-  if ((currentPath === '/' || currentPath.endsWith('index.html')) && !window.location.search.includes('variant=')) {
+  
+  // Only redirect if we're on the index page
+  if (currentPath === '/' || currentPath.endsWith('index.html')) {
     const variant = getCurrentVariant();
-    window.location.href = `variants/variant-${variant}.html`;
+    
+    // If URL already has parameters, append variant
+    if (window.location.search) {
+      if (!window.location.search.includes('variant=')) {
+        window.location.href = `variants/variant-${variant}.html${window.location.search}&variant=${variant}`;
+      } else {
+        // URL already has variant parameter, use that
+        const urlParams = new URLSearchParams(window.location.search);
+        const variantParam = urlParams.get('variant');
+        if (variantParam && ['a', 'b', 'c'].includes(variantParam.toLowerCase())) {
+          window.location.href = `variants/variant-${variantParam.toLowerCase()}.html`;
+        } else {
+          window.location.href = `variants/variant-${variant}.html`;
+        }
+      }
+    } else {
+      // No URL parameters
+      window.location.href = `variants/variant-${variant}.html?variant=${variant}`;
+    }
     return true;
   }
   return false;

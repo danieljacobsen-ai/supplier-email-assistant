@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Circuto</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --background: #f8f9fa;
+      --text: #212529;
+      --text-light: #6c757d;
+      --primary: #007BFF;
+      --primary-dark: #0056b3;
+      --card-bg: #ffffff;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+    
+    .thank-you-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      padding: 3rem;
+      margin-top: 2rem;
+    }
+    
+    .icon-success {
+      font-size: 4rem;
+      color: #28a745;
+      margin-bottom: 1.5rem;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    p {
+      font-size: 1.25rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    
+    .btn:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <!-- Top announcement bar -->
+  <div class="w-full bg-[#007BFF] text-white text-center py-2 font-medium">
+    Circuto is launching soon
+  </div>
+  
+  <div class="container">
+    <div class="thank-you-card">
+      <i class="fas fa-check-circle icon-success"></i>
+      <h1>Thank You for Signing Up!</h1>
+      <p>You're now on the list for early access to Circuto.</p>
+      <p>We'll notify you as soon as we're ready to launch.</p>
+      <a href="index.html" class="btn">Back to Homepage</a>
+    </div>
+    
+    <p style="margin-top: 30px; font-style: italic;">Have questions? Contact us at hello@circuto.com</p>
+  </div>
+</body>
+</html>
